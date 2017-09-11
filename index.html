@@ -49,7 +49,7 @@
 </head>
 <body>
 <center>WELCOME TO LOGIN PAGE</center>
-<form action="logindata.php">
+<form action="logindata.php" name="myform">
 	<div class="imagecontainer">
 		<img src="Login.png" alt="logo_img" class="logo_img">
 	</div>
@@ -58,12 +58,28 @@
 		<input type="text" name="username" placeholder="enter the user name" required=""><br>
 		<label><b>password</b></label>
 		<input type="password" name="password" placeholder="enter the password" required="">
-		<button type="submit">login</button><br>
+		<button type="submit" onsubmit="submitfunction()">login</button><br>
 		<input type="checkbox" checked="checked">Remember
 	</div>
 		<span class="psw">Forgot <a href="#">password?</a></span>
 		
 	</div>
 </form>
+<script>
+function submitfunction() {
+	var x = document.forms['myform']['username'].value;
+	var y = document.forms['myform']['password'].value;
+		if(x=="rck")
+			{
+				if(y=="12345")
+				{
+				alert("login suceessfull");
+				}
+			else
+			{
+			alert("login or password entered wrong");
+			}
+			}
+</script>
 </body>
 </html>
